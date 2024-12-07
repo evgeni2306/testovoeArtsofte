@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
     private const TABLE_NAME = 'autos';
-    private const FIRST_FOREIGN_TABLE_NAME = 'brands';
+
     private const SECOND_FOREIGN_TABLE_NAME = 'car_models';
 
     /**
@@ -18,7 +18,6 @@ return new class extends Migration {
     {
         Schema::create(self::TABLE_NAME, function (Blueprint $table) {
             $table->id();
-            $table->foreignId('brand_id')->constrained(self::FIRST_FOREIGN_TABLE_NAME);
             $table->foreignId('car_model_id')->constrained(self::SECOND_FOREIGN_TABLE_NAME);
             $table->string('photo');
             $table->bigInteger('price');
@@ -34,3 +33,4 @@ return new class extends Migration {
         Schema::dropIfExists(self::TABLE_NAME);
     }
 };
+

@@ -7,19 +7,27 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasOneThrough;
 
 class Auto extends Model
 {
     use HasFactory;
 
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+        'car_model_id'
+    ];
 
-    public function brand(): HasOne
+
+    public function brand(): HasOneThrough
     {
-        return $this->hasOne(Brand::class);
+        return $this->through($this->model())->has('brand');
     }
 
-    public function carModel(): HasOne
+    public function model(): HasOne
     {
-        return $this->hasOne(CarModel::class);
+        return $this->hasOne(CarModel::class, 'id', 'car_model_id');
     }
 }
+

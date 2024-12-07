@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
     private const TABLE_NAME = 'car_models';
+    private const FOREIGN_TABLE_NAME = 'brands';
 
     /**
      * Run the migrations.
@@ -17,7 +18,9 @@ return new class extends Migration {
         Schema::create(self::TABLE_NAME, function (Blueprint $table) {
             $table->id();
             $table->string('name', 255);
+            $table->foreignId('brand_id')->constrained(self::FOREIGN_TABLE_NAME);
             $table->timestamps();
+            $table->unique(['brand_id', 'name']);
         });
     }
 
@@ -29,3 +32,4 @@ return new class extends Migration {
         Schema::dropIfExists(self::TABLE_NAME);
     }
 };
+
