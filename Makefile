@@ -18,3 +18,7 @@ cp-env:
 generate-key:
 	@docker-compose exec --user=www php php artisan key:generate
 
+seed:
+	@docker-compose exec --user=www php php artisan db:seed --class=BrandSeeder
+	@docker-compose exec --user=www php php artisan db:seed --class=CarModelSeeder
+	@docker-compose exec --user=www php php artisan db:seed --class=AutoSeeder
