@@ -6,14 +6,14 @@ namespace App\Http\Controllers\Api;
 
 use App\Cases\GetCarCase;
 use App\Http\Controllers\Controller;
-use App\Models\Auto;
+use App\Models\Car;
 use Illuminate\Http\JsonResponse;
 
 class CarsController extends Controller
 {
     public function list(): JsonResponse
     {
-        $carsList = Auto::with(['brand'])->get();
+        $carsList = Car::with(['brand'])->get();
 
         return response()->json([$carsList], 200, ['Content-Type' => 'string']);
     }

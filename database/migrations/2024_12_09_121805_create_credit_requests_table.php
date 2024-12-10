@@ -7,9 +7,9 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
-    private const TABLE_NAME = 'autos';
-
-    private const SECOND_FOREIGN_TABLE_NAME = 'car_models';
+    private const TABLE_NAME = 'credit_requests';
+    private const FIRST_FOREIGN_TABLE_NAME = 'cars';
+    private const SECOND_FOREIGN_TABLE_NAME = 'credit_programs';
 
     /**
      * Run the migrations.
@@ -18,9 +18,10 @@ return new class extends Migration {
     {
         Schema::create(self::TABLE_NAME, function (Blueprint $table) {
             $table->id();
-            $table->foreignId('car_model_id')->constrained(self::SECOND_FOREIGN_TABLE_NAME);
-            $table->string('photo');
-            $table->bigInteger('price');
+            $table->foreignId('car_id')->constrained(self::FIRST_FOREIGN_TABLE_NAME);
+            $table->foreignId('programs_id')->constrained(self::SECOND_FOREIGN_TABLE_NAME);
+            $table->bigInteger('initial_payment')->unsigned();
+            $table->integer('loan_term')->unsigned();
             $table->timestamps();
         });
     }
@@ -33,4 +34,3 @@ return new class extends Migration {
         Schema::dropIfExists(self::TABLE_NAME);
     }
 };
-

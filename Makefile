@@ -21,4 +21,4 @@ generate-key:
 seed:
 	@docker-compose exec --user=www php php artisan db:seed --class=BrandSeeder
 	@docker-compose exec --user=www php php artisan db:seed --class=CarModelSeeder
-	@docker-compose exec --user=www php php artisan db:seed --class=AutoSeeder
+	@docker-compose exec --user=www php php artisan db:seed --class=CarSeeder

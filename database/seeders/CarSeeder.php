@@ -8,9 +8,9 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class AutoSeeder extends Seeder
+class CarSeeder extends Seeder
 {
-    private const TABLE_NAME = 'autos';
+    private const TABLE_NAME = 'cars';
 
     /**
      * Run the database seeds.
