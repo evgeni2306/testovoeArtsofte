@@ -16,7 +16,7 @@ class CalculateCreditCase
         $loanAmount = $price - $initialPayment;
         $creditProgram = CreditProgram::query()
             ->orderBy(self::MIN_LOAN_AMOUNT_FIELD, 'desc')
-            ->where(self::MIN_LOAN_AMOUNT_FIELD, '<', $loanAmount)
+            ->where(self::MIN_LOAN_AMOUNT_FIELD, '<=', $loanAmount)
             ->firstOrFail();
 
         $result = $creditProgram->toArray();

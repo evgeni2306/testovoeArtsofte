@@ -22,3 +22,4 @@ seed:
 	@docker-compose exec --user=www php php artisan db:seed --class=BrandSeeder
 	@docker-compose exec --user=www php php artisan db:seed --class=CarModelSeeder
 	@docker-compose exec --user=www php php artisan db:seed --class=CarSeeder
+	@docker-compose exec --user=www php php artisan db:seed --class=CreditProgramSeeder

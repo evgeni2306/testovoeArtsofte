@@ -15,4 +15,11 @@ class CreditRequest extends Model
         'created_at',
         'updated_at',
     ];
+
+    protected $fillable = [
+        'car_id',
+        'program_id',
+        'initial_payment',
+        'loan_term'
+    ];
 }

@@ -19,7 +19,7 @@ return new class extends Migration {
         Schema::create(self::TABLE_NAME, function (Blueprint $table) {
             $table->id();
             $table->foreignId('car_id')->constrained(self::FIRST_FOREIGN_TABLE_NAME);
-            $table->foreignId('programs_id')->constrained(self::SECOND_FOREIGN_TABLE_NAME);
+            $table->foreignId('program_id')->constrained(self::SECOND_FOREIGN_TABLE_NAME);
             $table->bigInteger('initial_payment')->unsigned();
             $table->integer('loan_term')->unsigned();
             $table->timestamps();

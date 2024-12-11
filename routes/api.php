@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\Api\CarsController;
 use App\Http\Controllers\Api\CreditController;
-use App\Http\Controllers\Api\RequestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,5 +19,5 @@ Route::prefix('v1')->group(function () {
     Route::get('/cars', [CarsController::class, 'list']);
     Route::get('/cars/{id}', [CarsController::class, 'get']);
     Route::get('/credit/calculate', [CreditController::class, 'calculate']);
-    Route::post('/request', [RequestController::class, 'save']);
+    Route::post('/credit/request', [CreditController::class, 'save']);
 });

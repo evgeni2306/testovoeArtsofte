@@ -1,1 +1,7 @@
-Laravel version = 10
+Установка:
+-
+make install
+
+make seed
+
+
