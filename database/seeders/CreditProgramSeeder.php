@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
 class CreditProgramSeeder extends Seeder
 {
     private const TABLE_NAME = 'credit_programs';
+
     /**
      * Run the database seeds.
      */

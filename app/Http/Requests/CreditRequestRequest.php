@@ -16,8 +16,8 @@ class CreditRequestRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'carId' => ['required', 'int','exists:cars,id'],
-            'programId' => ['required', 'int','exists:credit_programs,id'],
+            'carId' => ['required', 'int', 'exists:cars,id'],
+            'programId' => ['required', 'int', 'exists:credit_programs,id'],
             'initialPayment' => ['required', 'int'],
             'loanTerm' => ['required', 'int'],
         ];

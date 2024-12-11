@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -25,7 +24,7 @@ class CarModelSeeder extends Seeder
         DB::table(self::TABLE_NAME)->insert([
             'name' => 'Camry',
             'brand_id' => 1
-        ]);;
+        ]);
 
         DB::table(self::TABLE_NAME)->insert([
             'name' => 'Corolla',
@@ -40,7 +39,7 @@ class CarModelSeeder extends Seeder
         DB::table(self::TABLE_NAME)->insert([
             'name' => 'RX300',
             'brand_id' => 2
-        ]);;
+        ]);
 
         DB::table(self::TABLE_NAME)->insert([
             'name' => 'LX570',
@@ -55,7 +54,7 @@ class CarModelSeeder extends Seeder
         DB::table(self::TABLE_NAME)->insert([
             'name' => 'Priora',
             'brand_id' => 3
-        ]);;
+        ]);
 
         DB::table(self::TABLE_NAME)->insert([
             'name' => 'Vesta',
